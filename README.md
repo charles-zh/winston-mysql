@@ -12,21 +12,21 @@ synopsis
 --------
 
 ```js
-    var options_default = {
-      host     : 'localhost',
-      user     : 'logtest',
-      password : 'log*test*pass',
-      database : 'logtest',
-      table    : 'sys_logs_default'
-    };
+var options_default = {
+  host     : 'localhost',
+  user     : 'logtest',
+  password : 'log*test*pass',
+  database : 'logtest',
+  table    : 'sys_logs_default'
+};
 
-    var logger = new (winston.Logger)({
-    transports: [
-      new winston_mysql(options_default)
-    ]
-    });
-    var msg = 'test message');
-    logger.info('first log', {message: msg});
+var logger = new (winston.Logger)({
+transports: [
+  new winston_mysql(options_default)
+]
+});
+var msg = 'test message');
+logger.info('first log', {message: msg});
     
 ```
 
