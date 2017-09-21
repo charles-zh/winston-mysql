@@ -4,7 +4,8 @@
   "description": "MySQL transport plugin for winston logger",
   "main": "lib/mysql_transport.js",
   "bugs": "https://github.com/charles-zh/winston-mysql/issues",
-  "devDependencies": {
+  "dependencies": {
+    "mysql": "^2.14.1",
     "winston": "~2.0.0",
     "vows": "0.7.x"
   },
