@@ -12,22 +12,28 @@ synopsis
 --------
 
 ```js
-var options_default = {
-  host     : 'localhost',
-  user     : 'logtest',
-  password : 'log*test*pass',
-  database : 'logtest',
-  table    : 'sys_logs_default'
+const winston = require('winston');
+const MySQL = require('winston-mysql').MySQL;
+
+// Create a newlogger
+var logger = new winston.Logger();
+
+// Define the logger options
+const loggerOptions = {
+  level: 'info', // If undefined the default is info
+  host: 'localhost',
+  user: 'logtest',
+  password: 'log*test*pass',
+  database: 'logtest',
+  table: 'sys_logs_custom',
+  unix: true // If undefined the default is false
 };
 
-var logger = new (winston.Logger)({
-transports: [
-  new winston_mysql(options_default)
-]
-});
-var msg = 'test message');
-logger.info('first log', {message: msg});
-    
+// A MySQL transport
+logger.add(winston.transports.MySQL, loggerOptions)
+
+// Log an info level message
+logger.info('first log', {message: 'test message'});
 ```
 
 installation
@@ -46,6 +52,8 @@ CREATE TABLE `logtest`.`sys_logs_default` (
  PRIMARY KEY (`id`));
 
 ```
+Change the timestamp type from `DATETIME` to `DOUBLE` if you would like to log a unix timestamp instead.
+
 If you already have the log table, you can set custom fields for this module.
 ```js
 //custom log table fields
