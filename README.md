@@ -26,8 +26,7 @@ const loggerOptions = {
   password: 'log*test*pass',
   database: 'logtest',
   table: 'sys_logs_custom',
-  unix: true, // If undefined the default is false
-  fields: { level: 'level', meta: 'meta', message: 'type', timestamp: 'timestamp'}
+  unix: true // If undefined the default is false
 };
 
 // A MySQL transport
