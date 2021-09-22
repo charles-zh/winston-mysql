@@ -1,11 +1,11 @@
 # winston-mysql
-MySQL transport plugin for winston@3 logger
+MySQL transport plugin for winston@3.x logger
 
 #### <https://github.com/charles-zh/winston-mysql> #
 
 introduction
 ------------
-This MySQL transport module is a plugin for winston@3 logger running in node.js.
+This MySQL transport module is a plugin for winston@3.x logger running in node.js.
 
 Current version plugin supports Winston@3.x.
 
@@ -135,7 +135,6 @@ Head over to <https://github.com/charles-zh/winston-mysql>
 run tests
 -------------
 Install docker & docker-compose.
-
 Enter test directory and run:
 
 ```
@@ -144,6 +143,12 @@ docker-compose up
 ```
 
 Then:
+
+Open browser and visit: 127.0.0.1:8080. 
+
+Login using user & password in docker-compose.yml
+
+Create Tables using SQL commands above.
 
 ```sh
 $ npm run test

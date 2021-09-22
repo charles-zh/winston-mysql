@@ -1,6 +1,6 @@
 {
   "name": "winston-mysql",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "MySQL transport plugin for winston@3.x logger",
   "main": "lib/mysql_transport.js",
   "bugs": {
