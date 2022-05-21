@@ -15,6 +15,9 @@ synopsis
 Please check test/test.js for demo usage
 
 ```js
+
+import MySQLTransport from 'winston-mysql';
+
 const options_default = {
     host: 'localhost',
     user: 'logger',
@@ -51,7 +54,7 @@ const logger = winston.createLogger({
             format: winston.format.simple(),
         }),
         // or use: options_custom / options_json
-        new winstonMysql(options_default),
+        new MySQLTransport(options_default),
     ],
 });
 
